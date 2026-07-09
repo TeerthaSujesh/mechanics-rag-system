@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Vector Database
+backend/vectorstore/
+
+# OCR Output
+backend/data/extracted_text/
+
+# Node
+node_modules/
+
+# React
+frontend/dist/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
