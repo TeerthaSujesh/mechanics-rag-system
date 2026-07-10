@@ -21,3 +21,5 @@ frontend/dist/
 
 # VS Code
 .vscode/
+.venv/
+chroma_db/
