@@ -1,5 +1,6 @@
 from sentence_transformers import SentenceTransformer
 import chromadb
+import json
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 client = chromadb.PersistentClient(path="./chroma_db")
@@ -34,7 +35,7 @@ def retrieve(question: str, k: int = 3):
                 "problem_id": results["ids"][0][i],
                 "confidence": round(confidence, 3),
                 "problem_statement": meta["problem_statement"],
-                "solution_steps": meta["solution_steps"],
+                "solution_steps": json.loads(meta["solution_steps"]), 
                 "final_answer": meta["final_answer"],
                 "image_path": meta["image_path"],
             })
@@ -54,7 +55,7 @@ def get_by_id(problem_id: str):
         "problem_id": problem_id,
         "confidence": 1.0,  # exact match, not a similarity guess
         "problem_statement": meta["problem_statement"],
-        "solution_steps": meta["solution_steps"],
+        "solution_steps":json.loads(meta["solution_steps"]), 
         "final_answer": meta["final_answer"],
         "image_path": meta["image_path"],
     }

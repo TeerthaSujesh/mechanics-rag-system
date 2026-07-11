@@ -21,7 +21,7 @@ metadatas = [
         "chapter": d["chapter"],
         "topic": d["topic"],
         "problem_statement": d["problem_statement"],
-        "solution_steps": d["solution_steps"],
+        "solution_steps": json.dumps(d["solution_steps"]),
         "final_answer": d["final_answer"],
         "image_path": d["image_path"],
     }
