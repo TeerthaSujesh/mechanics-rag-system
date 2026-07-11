@@ -3,8 +3,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from backend.ask_doubt import ask_doubt
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI(title="Mechanics Statics RAG API")
+
+app.mount(
+    "/images",
+    StaticFiles(directory="images"),
+    name="images",
+)
 
 app.add_middleware(
     CORSMiddleware,

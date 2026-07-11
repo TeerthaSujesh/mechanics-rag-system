@@ -31,5 +31,5 @@ export async function askQuestion(question) {
 // (e.g. "images/ch6_6-3.png"). It's served statically at /data.
 export function resolveImageUrl(imagePath) {
   if (!imagePath) return null
-  return `${API_BASE}/data/${imagePath}`
+  return `${API_BASE}/${imagePath}`
 }
