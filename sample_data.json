@@ -13,29 +13,6 @@
     "image_path": "images/ch6_6-3.png"
   },
   {
-    "problem_id": "6-1",
-    "chapter": "friction",
-    "topic": "friction basics",
-    "problem_statement": "A crate rests on a horizontal surface with coefficient of static friction 0.3. Find the minimum horizontal force to start moving a 100 kg crate.",
-    "solution_steps": [
-      "F_max = mu_s * N = 0.3 * 100 * 9.81 = 294.3 N"
-    ],
-    "final_answer": "F = 294.3 N",
-    "image_path": "images/ch6_6-1.png"
-  },
-  {
-    "problem_id": "4-2",
-    "chapter": "centroids",
-    "topic": "centroid of composite area",
-    "problem_statement": "Find the centroid of a composite area made of a rectangle and a semicircle.",
-    "solution_steps": [
-      "Split into rectangle and semicircle, compute individual centroids and areas",
-      "Use weighted average formula xbar = sum(x_i*A_i)/sum(A_i)"
-    ],
-    "final_answer": "xbar = 45.2 mm, ybar = 30.1 mm",
-    "image_path": "images/ch4_4-2.png"
-  },
-  {
     "problem_id": "6-11",
     "chapter": "friction",
     "topic": "friction - cylinder wedged between surfaces",
