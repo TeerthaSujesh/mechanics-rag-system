@@ -18,7 +18,7 @@ const LOADING_STAGES = {
 export default function Workbench() {
   const [messages, setMessages] = useState([STARTER])
   const [reference, setReference] = useState(null)
-  const [status, setStatus] = useState('idle') // idle | thinking | error
+  const [status, setStatus] = useState('idle')
   const [loadingStage, setLoadingStage] = useState('retrieve')
   const scrollRef = useRef(null)
   const stageTimeoutRef = useRef(null)
@@ -36,8 +36,6 @@ export default function Workbench() {
     setMessages((m) => [...m, userMsg])
     setStatus('thinking')
     setLoadingStage('retrieve')
-    // The backend answers in one round trip, but retrieval-then-generation
-    // is genuinely a two-phase pipeline, so reflect that in the copy.
     stageTimeoutRef.current = setTimeout(() => setLoadingStage('generate'), 1100)
 
     try {
@@ -78,7 +76,7 @@ export default function Workbench() {
 
   return (
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
-      <div className="lg:col-span-3 plate bg-card dark:bg-cardDark border border-blueprint/25 dark:border-blueprintSoft/20 rounded-sm flex flex-col h-[68vh]">
+      <div className="lg:col-span-3 bg-card dark:bg-cardDark border-[3px] border-ink dark:border-inkDark rounded-2xl shadow-[5px_5px_0_0_#2B1220] dark:shadow-[5px_5px_0_0_#FFE9D6] flex flex-col h-[68vh] rotate-[0.4deg]">
         <div ref={scrollRef} className="chat-scroll flex-1 overflow-y-auto px-5 py-5 space-y-4">
           {messages.map((m) => (
             <MessageBubble key={m.id} role={m.role} text={m.text} />
