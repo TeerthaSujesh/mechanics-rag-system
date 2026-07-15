@@ -1,6 +1,7 @@
 from sentence_transformers import SentenceTransformer
 import chromadb
 import json
+import re
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 client = chromadb.PersistentClient(path="./chroma_db")
@@ -12,6 +13,13 @@ collection = client.get_or_create_collection(
 CONFIDENCE_THRESHOLD = 0.40  # placeholder — we'll calibrate this properly once real data is in
 
 def retrieve(question: str, k: int = 3):
+    match = re.search(r"\d+-\d+", question)
+
+    if match:
+       problem = get_by_id(match.group())
+
+       if problem:
+            return [problem]
     q_embedding = model.encode([question]).tolist()
     results = collection.query(query_embeddings=q_embedding, n_results=k)
 

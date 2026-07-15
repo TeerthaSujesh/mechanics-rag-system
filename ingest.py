@@ -13,7 +13,28 @@ with open("sample_data.json") as f:
     data = json.load(f)
 
 ids = [d["problem_id"] for d in data]
-docs = [d["problem_statement"] for d in data]  # ONLY problem_statement is embedded
+
+docs = []
+
+for d in data:
+    document = f"""
+Problem ID: {d["problem_id"]}
+
+Chapter: {d["chapter"]}
+
+Topic: {d["topic"]}
+
+Problem:
+{d["problem_statement"]}
+
+Solution:
+{" ".join(d["solution_steps"])}
+
+Final Answer:
+{d["final_answer"]}
+"""
+
+    docs.append(document)
 embeddings = model.encode(docs).tolist()
 
 metadatas = [
