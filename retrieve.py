@@ -3,7 +3,7 @@ import chromadb
 import json
 import re
 
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer("BAAI/bge-base-en-v1.5")
 reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
 
 client = chromadb.PersistentClient(path="./chroma_db")
