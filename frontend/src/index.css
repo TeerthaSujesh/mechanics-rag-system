@@ -7,24 +7,23 @@ html, body, #root {
 }
 
 body {
-  background-color: #EEF3F3;
+  background-color: #FFEEDD;
   background-image:
-    linear-gradient(rgba(43, 110, 126, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(43, 110, 126, 0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
-  color: #152A3A;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    radial-gradient(rgba(255, 107, 53, 0.12) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  color: #2B1220;
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 300ms ease, color 300ms ease;
 }
 
 html.dark body {
-  background-color: #101A20;
+  background-color: #241019;
   background-image:
-    linear-gradient(rgba(95, 187, 203, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(95, 187, 203, 0.08) 1px, transparent 1px);
-  color: #E7EEF0;
+    radial-gradient(rgba(255, 163, 107, 0.12) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  color: #FFE9D6;
 }
 
 * {
@@ -32,11 +31,11 @@ html.dark body {
 }
 
 ::selection {
-  background: #2B6E7E;
+  background: #FF6B35;
   color: #fff;
 }
 
-/* Corner ticks that make a box read as a drafted plate rather than a div */
+/* Sticker-style corner accents instead of drafting-plate ticks */
 .plate {
   position: relative;
 }
@@ -46,24 +45,26 @@ html.dark body {
   position: absolute;
   width: 10px;
   height: 10px;
-  border: 1.5px solid #2B6E7E;
-  opacity: 0.55;
+  border: 2px solid #2B1220;
+  opacity: 0.7;
 }
 .plate::before {
-  top: -1px;
-  left: -1px;
+  top: -2px;
+  left: -2px;
   border-right: none;
   border-bottom: none;
+  border-radius: 6px 0 0 0;
 }
 .plate::after {
-  bottom: -1px;
-  right: -1px;
+  bottom: -2px;
+  right: -2px;
   border-left: none;
   border-top: none;
+  border-radius: 0 0 6px 0;
 }
 
 .chat-scroll::-webkit-scrollbar { width: 8px }
-.chat-scroll::-webkit-scrollbar-thumb { background: rgba(21,42,58,0.15); border-radius: 9999px }
+.chat-scroll::-webkit-scrollbar-thumb { background: rgba(255,107,53,0.35); border-radius: 9999px }
 .chat-scroll::-webkit-scrollbar-track { background: transparent }
 
 @keyframes dash-in {
